@@ -1,0 +1,23 @@
+﻿@{
+		ViewData["Title"] = "Home";
+
+}
+<div claas="form-group">
+<form method="post" action="/home/setSession">
+<label for="inputEingabe">Eingabe</label>
+	<input type="text" class="form-control" id="inputEingabe" name="Eingabe" />
+<br />
+	<input type="submit" class="btn btn-secondary" value="Speichern" />
+</form>
+</div>
+<hr />
+<div>
+	<p>Session Inhalt: </p>
+<p>@if (ViewBag.SessionInhalt != null)
+		{
+			@ViewBag.SessionInhalt
+		}
+	</p>
+<form action="/home/deleteSession">
+<button type="submit">Session löschen</button>
+</form>
